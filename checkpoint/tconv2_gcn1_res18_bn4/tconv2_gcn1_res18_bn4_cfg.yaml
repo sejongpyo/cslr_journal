@@ -1,0 +1,32 @@
+batch_size: 4
+dataset_root: /home/ubuntu/workspace/SLR_codes/VAC_CSLR/dataset/phoenix2014/phoenix-2014-multisigner
+dict_path: /home/ubuntu/workspace/SLR_codes/rwth/preprocess/phoenix2014/gloss_dict.npy
+evaluation_dir: /home/ubuntu/workspace/SLR_codes/rwth/evaluation/slr_eval
+evaluation_prefix: phoenix2014-groundtruth
+feeder_args:
+  datatype: video
+  drop_ratio: 1.0
+  mode: train
+  num_gloss: -1
+hyper:
+  device: cuda:0
+  epochs: 80
+  evaluation_dir: /home/ubuntu/workspace/SLR_codes/rwth/evaluation/slr_eval
+  evaluation_prefix: phoenix2014-groundtruth
+  grad_clip: 5
+  learning_rate: 0.0001
+model:
+  cnn_pretrain: true
+  device: cuda:0
+  g_bn: true
+  g_layer: 1
+  g_outdim: 1024
+  key_dim: 256
+  lstm_dim: 512
+  lstm_drop: 0.3
+  lstm_layer: 2
+  num_classes: 1296
+  tconv_type: 2
+nameofrun: tconv2_gcn1_res18_bn4
+num_worker: 10
+test_batch_size: 8
